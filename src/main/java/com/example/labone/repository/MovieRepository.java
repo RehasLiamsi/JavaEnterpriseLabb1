@@ -1,5 +1,6 @@
 package com.example.labone.repository;
 
+import com.example.labone.dto.MovieDto;
 import com.example.labone.entity.Movie;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
@@ -41,4 +42,11 @@ public class MovieRepository {
     }
 
 
+    public Movie update(Long id, Movie movie) {
+        var entity = entityManager.find(Movie.class, id);
+        entity.setName(movie.getName());
+        entity.setGenre(movie.getGenre());
+        entityManager.persist(entity);
+        return entity;
+    }
 }

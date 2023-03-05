@@ -1,5 +1,7 @@
 package com.example.labone.dto;
 
+import com.example.labone.entity.Movie;
+
 public class MovieDto {
     private Long id;
     private String name;
@@ -8,10 +10,10 @@ public class MovieDto {
     public MovieDto() {
     }
 
-    public MovieDto(Long id, String name, String genre) {
-        this.id = id;
-        this.name = name;
-        this.genre = genre;
+    public MovieDto(Movie movie) {
+        this.id = movie.getId();
+        this.name = movie.getName();
+        this.genre = movie.getGenre();
     }
 
     public Long getId() {

@@ -13,7 +13,7 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "name can't be null")
+    @NotNull(message = "Must enter a name")
     String name;
 
     String genre;
